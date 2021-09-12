@@ -60,25 +60,25 @@ def sign_up():
     
     return render_template('message.html', message='successfully created')
 
-@app.route('/users/<name>', methods=['GET', 'POST'])
-def get_user(name):
-    with sqlite3.connect("pythondemo.db") as con:
-        con.row_factory = sqlite3.Row
-        cur = con.cursor()  
-        cur.execute("select * from users where name = '%s'" % name )
-        user = cur.fetchone()
-    return render_template('profile.html', user = dict(user))
-
-
-@app.route('/note', methods=['GET', 'POST'])
-def note():
+@app.route('/users', methods=['GET', 'POST'])
+def get_user():
     if request.method == 'GET':
-        return render_template('note.html')
-    # create note
+        with sqlite3.connect("pythondemo.db") as con:
+            # con.row_factory = sqlite3.Row
+            cur = con.cursor()  
+            cur.execute("select * from users")
+            users = cur.fetchall()
+        return render_template('profile.html', user = list(users))
+
+
+@app.route('/users/delete', methods=['GET'])
+def note():
+    
     with sqlite3.connect("pythondemo.db") as con:
-        con.row_factory = sqlite3.Row
         cur = con.cursor()
-        cur.execute("insert into notes (body, user_id) values(?,?)",  (body, user_id))
+        cur.execute('delete from users')
+        return 'success'
     return ''
 if __name__ == '__name__':
-    app.run(debug= True)
+    port = 8000
+    app.run(host='hel', port=port, debug=True)
