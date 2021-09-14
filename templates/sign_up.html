@@ -1,21 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <form method="POST" action="/sign-up">
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter name">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter password">
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
-            </div>
-            <div class="form-group float-right">
-                Already have account? <a href="/sign-up">Sign In</a>
-            </div>
-        </form>
-    </body>
+  <head>
+    <style>
+      .page_wrapper {
+        width: 100%;
+        height: 90vh;
+        background-color: #f7f7f7;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .form {
+        padding:64px 32px;
+        box-shadow: 3px 3px 3px #f7f7f7;
+        background-color: white;
+      }
+      .form_group {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .form_label {
+        width: 100px;
+        height: 30px;
+        padding-left: 8px;
+        display: flex;
+        align-items: center;
+      }
+      .form_control {
+        width: 400px;
+        height: 30px;
+        padding-left: 4px;
+        border-radius: 3px;
+        border: 1px solid #333;
+      }
+      .btn {
+        width: 400px;
+        padding: 8px 16px;
+        color: white;
+        background-color: chocolate;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border: none;
+      }
+      .float_right {
+        float: right;
+      }
+      a {
+        color: chocolate;
+      }
+      a:hover {
+        color: chocolate;
+      }
+    </style>
+  </head>
+  <body class="page_wrapper">
+    <form method="POST" action="/sign-up" class="form">
+      <div class="form_group">
+        <label class="form_label">Name</label>
+        <input
+          type="text"
+          name="name"
+          class="form_control"
+          placeholder="Enter name"
+        />
+      </div>
+      <div class="form_group">
+        <label class="form_label">Password</label>
+        <input
+          type="password"
+          name="password"
+          class="form_control"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="float_right">
+        <button type="submit" class="btn">Sign Up</button>
+        <div>Already have account? <a href="/sign-in">Sign In</a></div>
+      </div>
+    </form>
+  </body>
 </html>

@@ -1,8 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1> welcome to home</h1>
-        <a href="/sign-in">sign-in</a><br>
-        <a href="/sign-up">sign-up</a>
-    </body>
+  <head>
+    <title>Python Demo</title>
+    <style>
+      .page_wrapper {
+        background-color: #f7f7f7;
+        width: 100%;
+        height: 90vh;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    .link_button {
+      padding: 8px 16px;
+      background-color: chocolate;
+      border-radius: 5px;
+      color: wheat;
+      width: 300px;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+    .link_button:hover{
+      color: chocolate;
+      background-color: wheat;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="page_wrapper">
+      <h1>Welcome to Python Project</h1>
+      <a href="/sign-in" class="link_button">sign-in</a>
+      <a href="/sign-up" class="link_button">sign-up</a>
+    </div>
+  </body>
 </html>
